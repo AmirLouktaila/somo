@@ -17,7 +17,7 @@ const portaffFunction = async (cookie, id, trackingId) => {
         });
       });
   
-      const infoRequest = axios.get(`https://alifetcher.onrender.com/info?id=${id}`);
+      const infoRequest = axios.get(`https://alifetcher.onrender.com/info?id=${id}&lang=en_US`);
   
       const responses = await Promise.all([...promotionLinkRequests, infoRequest]);
   
