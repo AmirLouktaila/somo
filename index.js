@@ -10,7 +10,7 @@ const app = express();
 const botToken = process.env.token;
 const appkey = process.env.appkeys;
 const secertkey = process.env.secertkeys;
-const tarckin_id = process.env.tarckin_ids;
+//const tarckin_id = process.env.tarckin_ids;
 const IdChannel = process.env.Idchannel;
 const Channel = process.env.channel;
 const link_cart = process.env.cart;
@@ -179,17 +179,17 @@ bot.on('text', async (ctx) => {
                             }
 
                             else {
-                            let url_link;
-                            if (links[0].includes("https")) {
-                             url_link = links[0]
-                            } else {
-                               
-                                var url_parts = links[0].split("http");
-                                url_link = "https" + url_parts[1];
-                            }
-                            idCatcher(url_link).then(response_link => {
+                                let url_link;
+                                if (links[0].includes("https")) {
+                                    url_link = links[0]
+                                } else {
 
-                                portaffFunction(process.env.cookies, response_link, process.env.tarckin_ids)
+                                    var url_parts = links[0].split("http");
+                                    url_link = "https" + url_parts[1];
+                                }
+                                idCatcher(url_link).then(response_link => {
+
+                                    portaffFunction(process.env.cookies, response_link, process.env.tarckin_ids)
                                         .then((coinPi) => {
                                             console.log("coinPi : ", coinPi)
                                             // let couponList = "";
@@ -205,29 +205,29 @@ bot.on('text', async (ctx) => {
                                             //         couponList += `🎁${desc}/${detail} :${code}\n`;
                                             //     });
                                             // }
-                                         let total;
-if (coinPi.info.points.discount != 'لا توجد نسبة تخفيض بالعملات ❎') {
-    var dise = coinPi.info.points.discount.replace("خصم النقاط ", "");
-    var ods = parseFloat(dise.replace("%", ""));
-    var prices = (parseFloat(coinPi.info.points.discountPrice.replace("US $", "")) / 100) * ods;
-    total = parseFloat(coinPi.info.points.discountPrice.replace("US $", "")) - prices;
-    if (coinPi.info.normal.shipping != "Free Shipping") {
-        total = total + parseFloat(coinPi.info.normal.shipping);
-    }
-} else {
-    total = parseFloat(coinPi.info.points.discountPrice.replace("US $", ""));
-    if (coinPi.info.normal.shipping != "Free Shipping") {
-        total = total + parseFloat(coinPi.info.normal.shipping);
-    }
-}
+                                            // let total;
+                                            // if (coinPi.info.points.discount != 'لا توجد نسبة تخفيض بالعملات ❎') {
+                                            //     var dise = coinPi.info.points.discount.replace("خصم النقاط ", "");
+                                            //     var ods = parseFloat(dise.replace("%", ""));
+                                            //     var prices = (parseFloat(coinPi.info.points.discountPrice.replace("US $", "")) / 100) * ods;
+                                            //     total = parseFloat(coinPi.info.points.discountPrice.replace("US $", "")) - prices;
+                                            //     if (coinPi.info.normal.shipping != "Free Shipping") {
+                                            //         total = total + parseFloat(coinPi.info.normal.shipping);
+                                            //     }
+                                            // } else {
+                                            //     total = parseFloat(coinPi.info.points.discountPrice.replace("US $", ""));
+                                            //     if (coinPi.info.normal.shipping != "Free Shipping") {
+                                            //         total = total + parseFloat(coinPi.info.normal.shipping);
+                                            //     }
+                                            // }
 
-try {
-    total = total.toFixed(2);
-} catch (e) {
-    total = total;
-}
+                                            // try {
+                                            //     total = total.toFixed(2);
+                                            // } catch (e) {
+                                            //     total = total;
+                                            // }
 
-                                   
+
                                             ctx.replyWithPhoto({ url: coinPi.info.normal.image },
                                                 {
 
@@ -251,7 +251,7 @@ ${coinPi.info.normal.name}
 🏷 نسبة تخفيض بالعملات قبل  :  (${coinPi.info.normal.discount})
 🏷 نسبة تخفيض بعد  : (${coinPi.info.points.discount})
 
-🌟رابط تخفيض النقاط:US $${total}
+🌟رابط تخفيض النقاط:US $${coinPi.info.points.discountPrice}
 ${coinPi.aff.points}
 
 🔥 رابط تخفيض السوبر: ${coinPi.info.super.price}
