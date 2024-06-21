@@ -227,36 +227,36 @@ bot.on('text', async (ctx) => {
                                             // }
 
 
-                                            ctx.replyWithPhoto({ url: coinPi.info.normal.image },
+                                            ctx.replyWithPhoto({ url: coinPi.normal.image },
                                                 {
 
 
                                                     caption: `
 <b>>-----------« تخفيض الاسعار 🎉 »>-----------</b>
-${coinPi.info.normal.name}
+${coinPi.normal.name}
 
-السعر الاصلي : (${coinPi.info.points.discountPrice})
+السعر الاصلي : (${coinPi.points.discountPrice})
 
-التقييم : ${coinPi.info.normal.rate}
-التقييمات : ${coinPi.info.normal.totalRates}
+التقييم : ${coinPi.normal.rate}
+التقييمات : ${coinPi.normal.totalRates}
 <b>----------- | ✨ المتجر ✨ | -----------</b>
 
-✈️ الشحن : ${coinPi.info.normal.shipping}
-🛒 إسم المتجر : ${coinPi.info.normal.store}
-📊 معدل تقييم المتجر : ${coinPi.info.normal.storeRate}
+✈️ الشحن : ${coinPi.normal.shipping}
+🛒 إسم المتجر : ${coinPi.normal.store}
+📊 معدل تقييم المتجر : ${coinPi.normal.storeRate}
 <b>----------- | ✨ التخفيضات ✨ | -----------</b>
 
-عدد المبيعات : ${coinPi.info.normal.sales}
-🏷 نسبة تخفيض بالعملات قبل  :  (${coinPi.info.normal.discount})
-🏷 نسبة تخفيض بعد  : (${coinPi.info.points.discount})
+عدد المبيعات : ${coinPi.normal.sales}
+🏷 نسبة تخفيض بالعملات قبل  :  (${coinPi.normal.discount})
+🏷 نسبة تخفيض بعد  : (${coinPi.points.discount})
 
-🌟رابط تخفيض النقاط:US $${coinPi.info.points.discountPrice}
+🌟رابط تخفيض النقاط:US $${coinPi.points.discountPrice}
 ${coinPi.aff.points}
 
-🔥 رابط تخفيض السوبر: ${coinPi.info.super.price}
+🔥 رابط تخفيض السوبر: ${coinPi.super.price}
 ${coinPi.aff.super}
 
-📌رابط العرض المحدود: ${coinPi.info.limited.price}
+📌رابط العرض المحدود: ${coinPi.limited.price}
 ${coinPi.aff.limited}
 <b>----------- | ✨ الكوبونات ✨ | -----------</b>
 ` ,
