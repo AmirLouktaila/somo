@@ -250,7 +250,7 @@ ${coinPi.normal.name}
 🏷 نسبة تخفيض بالعملات قبل  :  (${coinPi.normal.discount})
 🏷 نسبة تخفيض بعد  : (${coinPi.points.discount})
 
-🌟رابط تخفيض النقاط:US $${coinPi.points.discountPrice}
+🌟رابط تخفيض النقاط:${coinPi.points.discountPrice}
 ${coinPi.aff.points}
 
 🔥 رابط تخفيض السوبر: ${coinPi.super.price}
