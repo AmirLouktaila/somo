@@ -8,9 +8,7 @@ const portaffFunction = async (cookie, id, trackingId) => {
       return axios.get("https://portals.aliexpress.com/tools/linkGenerate/generatePromotionLink.htm", {
         params: {
           trackId: trackingId || 'default',
-          targetUrl: `https://ar.aliexpress.com/i/${id}.html`,
-          sourceType: sourceType,
-          aff_fcid: ''
+          targetUrl: `https://vi.aliexpress.com/i/${id}.html?sourceType=${sourceType}&aff_fcid=`,
         },
         headers: { "cookie": cookie }
       });
@@ -46,6 +44,4 @@ const portaffFunction = async (cookie, id, trackingId) => {
   }
 };
 
-
-// Example usage:
 exports.portaffFunction = portaffFunction;
