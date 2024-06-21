@@ -8,9 +8,9 @@ const { portaffFunction } = require('./afflinker.js');
 const AliExpressLibraryCart = require('./cart.js');
 const app = express();
 const botToken = process.env.token;
-const appkey = process.env.appkeys;
-const secertkey = process.env.secertkeys;
-//const tarckin_id = process.env.tarckin_ids;
+// const appkey = process.env.appkeys;
+// const secertkey = process.env.secertkeys;
+const tarckin_id = process.env.tarckin_ids;
 const IdChannel = process.env.Idchannel;
 const Channel = process.env.channel;
 const link_cart = process.env.cart;
@@ -189,7 +189,7 @@ bot.on('text', async (ctx) => {
                                 }
                                 idCatcher(url_link).then(response_link => {
 
-                                    portaffFunction(process.env.cookies, response_link, process.env.tarckin_ids)
+                                    portaffFunction(process.env.cookies, response_link, tarckin_id)
                                         .then((coinPi) => {
                                             console.log("coinPi : ", coinPi)
                                             // let couponList = "";
