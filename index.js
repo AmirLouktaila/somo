@@ -15,7 +15,6 @@ const IdChannel = process.env.Idchannel;
 const Channel = process.env.channel;
 const link_cart = process.env.cart;
 const bot = new Telegraf(botToken);
-const aliExpressLibCart = new AliExpressLibraryCart(appkey, secertkey, tarckin_id);
 app.use(express.json());
 app.use(bot.webhookCallback('/bot'))
 app.get('/', (req, res) => { res.sendStatus(200) });
