@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const portaffFunction = async (cookie, id, trackingId) => {
-  const sourceTypes = ["", "620", "562", "561"];
+  const sourceTypes = ["620", "562", "561"];
 
   try {
     const promotionLinkRequests = sourceTypes.map(sourceType => {
