@@ -163,7 +163,7 @@ bot.on('text', async (ctx) => {
                                     const finalUrl = `https://www.aliexpress.com/p/trade/confirm.html?availableProductShopcartIds=${numbersText}&extraParams=%7B%22channelInfo%22%3A%7B%22sourceType%22%3A%22620%22%7D%7D&aff_fcid=`;
                                     console.log(finalUrl);
                                     try {
-                                        aliExpressLibCart.getData(finalUrl).then((data) => {
+                                        AliExpressLibraryCart.portaffFunctioncart(process.env.cookies, finalUrl, tarckin_id).then((data) => {
                                             console.log(data)
                                             cart = `
  رابط السلة 
