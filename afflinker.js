@@ -1,14 +1,14 @@
 const axios = require('axios');
 
 const portaffFunction = async (cookie, id, trackingId) => {
-  const sourceTypes = ["620&channel=coin", "562", "561"];
+  const sourceTypes = ["620", "562", "561"];
 
   try {
     const promotionLinkRequests = sourceTypes.map(sourceType => {
       return axios.get("https://portals.aliexpress.com/tools/linkGenerate/generatePromotionLink.htm", {
         params: {
           trackId: trackingId || 'default',
-          targetUrl: `https://vi.aliexpress.com/i/${id}.html?sourceType=${sourceType}&aff_fcid=`,
+          targetUrl: `https://vi.aliexpress.com/i/${id}.html?sourceType=${sourceType == 620 ? sourceType + "&channel=coin" :sourceType }&aff_fcid=`,
         },
         headers: { "cookie": cookie }
       });
