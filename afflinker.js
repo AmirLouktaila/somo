@@ -14,7 +14,7 @@ const portaffFunction = async (cookie, id, trackingId) => {
       });
     });
 
-    const infoRequest = axios.get(`https://alfetcherbhjne8ja-amster.functions.fnc.nl-ams.scw.cloud/info?id=${id}&lang=en_US`);
+    const infoRequest = axios.get(`https://notibest.notibyte-dz.com/info?id=${id}&lang=en_US`);
 
     const responses = await Promise.all([...promotionLinkRequests, infoRequest]);
 
