@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const portaffFunction = async (cookie, id, trackingId) => {
-  const sourceTypes = ["620", "562", "561"];
+  const sourceTypes = ["620", "562", "561","680"];
 
   try {
     const promotionLinkRequests = sourceTypes.map(sourceType => {
@@ -14,11 +14,11 @@ const portaffFunction = async (cookie, id, trackingId) => {
       });
     });
 
-    const infoRequest = axios.get(`https://notibest.notibyte-dz.com/info?id=${id}`);
+    const infoRequest = axios.get(`https://afillbot.com/info?id=${id}`);
 
     const responses = await Promise.all([...promotionLinkRequests, infoRequest]);
 
-    let result = responses[3].data; // Accessing data from infoRequest
+    let result = responses[4].data; // Accessing data from infoRequest
     console.log(result);
 
     result.aff = {};
@@ -33,6 +33,9 @@ const portaffFunction = async (cookie, id, trackingId) => {
           break;
         case 2: // Limited
           result.aff.limited = response.data.data;
+          break;
+        case 3: // Limited
+          result.aff.bigsave = response.data.data;
           break;
       }
     });
