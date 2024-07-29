@@ -23,7 +23,7 @@ const portaffFunction = async (cookie, id, trackingId) => {
 
     result.aff = {};
     
-    responses.slice(0, 3).forEach((response, index) => {
+    responses.slice(0, 4).forEach((response, index) => {
       switch (index) {
         case 0: // Points
           result.aff.points = response.data.data;
