@@ -14,7 +14,7 @@ const portaffFunction = async (cookie, id, trackingId) => {
       });
     });
 
-    const infoRequest = axios.get(`https://afillbot.com/info?id=${id}`);
+    const infoRequest = axios.get(`https://afillbot.com/info?id=${id}&lang=en_DZ`);
 
     const responses = await Promise.all([...promotionLinkRequests, infoRequest]);
 
